@@ -1,18 +1,21 @@
-/* ========================================
+/* ==============================================
    ARTHAYA ADVISORS
-   WEBSITE VERSION 2
-======================================== */
+   WEBSITE VERSION 4
+============================================== */
 
 
 :root {
 
   --navy: #102038;
+
   --navy-soft: #172a45;
 
   --cream: #f2eddf;
+
   --cream-light: #faf8f1;
 
   --gold: #caa44d;
+
   --gold-dark: #a77f28;
 
   --sage: #6f837c;
@@ -21,7 +24,8 @@
 
   --muted: #6f726c;
 
-  --border: rgba(29, 33, 30, 0.16);
+  --border:
+    rgba(29, 33, 30, 0.16);
 
   --white: #ffffff;
 
@@ -41,9 +45,9 @@
 
 
 
-/* ========================================
+/* ==============================================
    GLOBAL
-======================================== */
+============================================== */
 
 * {
 
@@ -63,15 +67,15 @@ body {
 
   margin: 0;
 
-  font-family: var(--sans);
+  overflow-x: hidden;
 
   background: var(--cream);
 
   color: var(--ink);
 
-  line-height: 1.65;
+  font-family: var(--sans);
 
-  overflow-x: hidden;
+  line-height: 1.65;
 
 }
 
@@ -85,20 +89,34 @@ a {
 
 .container {
 
-  width: min(
-    calc(100% - 40px),
-    var(--max-width)
-  );
+  width:
+    min(
+      calc(100% - 40px),
+      var(--max-width)
+    );
 
   margin: 0 auto;
 
 }
 
 
+h1,
+h2,
+h3 {
 
-/* ========================================
+  margin-top: 0;
+
+  font-family: var(--serif);
+
+  line-height: 1.2;
+
+}
+
+
+
+/* ==============================================
    NAVIGATION
-======================================== */
+============================================== */
 
 .site-header {
 
@@ -106,15 +124,45 @@ a {
 
   top: 0;
 
-  z-index: 20;
+  z-index: 100;
 
   background:
-    rgba(242, 237, 223, 0.94);
+    rgba(242, 237, 223, 0.96);
 
-  backdrop-filter: blur(14px);
+  backdrop-filter:
+    blur(14px);
 
   border-bottom:
-    1px solid rgba(29, 33, 30, 0.1);
+    1px solid
+    rgba(29, 33, 30, 0.10);
+
+  animation:
+    headerEntrance
+    0.7s
+    ease both;
+
+}
+
+
+@keyframes headerEntrance {
+
+  from {
+
+    opacity: 0;
+
+    transform:
+      translateY(-18px);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform:
+      translateY(0);
+
+  }
 
 }
 
@@ -127,7 +175,8 @@ a {
 
   align-items: center;
 
-  justify-content: space-between;
+  justify-content:
+    space-between;
 
   gap: 30px;
 
@@ -140,7 +189,7 @@ a {
 
   align-items: center;
 
-  gap: 13px;
+  gap: 14px;
 
   text-decoration: none;
 
@@ -160,17 +209,15 @@ a {
 
   color: var(--gold-dark);
 
-  font-weight: 700;
-
 }
 
 
 
-/* ========================================
-   LOGO
-======================================== */
+/* ==============================================
+   SMALL NAV LOGO
+============================================== */
 
-.brand-mark {
+.small-logo {
 
   position: relative;
 
@@ -178,48 +225,72 @@ a {
 
   height: 25px;
 
+  display: block;
+
+}
+
+
+.small-piece {
+
+  position: absolute;
+
+  width: 11px;
+
+  height: 11px;
+
   transform: rotate(45deg);
 
 }
 
 
-.diamond {
-
-  position: absolute;
-
-  width: 12px;
-
-  height: 12px;
-
-}
-
-
-.diamond-gold {
-
-  left: 0;
+.small-top {
 
   top: 0;
+
+  left: 7px;
 
   background: var(--gold);
 
 }
 
 
-.diamond-light {
+.small-right {
 
   right: 0;
 
+  top: 7px;
+
+  background: var(--cream-light);
+
+}
+
+
+.small-bottom {
+
   bottom: 0;
+
+  left: 7px;
 
   background: var(--navy);
 
 }
 
 
+.small-left {
 
-/* ========================================
+  left: 0;
+
+  top: 7px;
+
+  background: var(--cream-light);
+
+}
+
+
+
+/* ==============================================
    NAV LINKS
-======================================== */
+============================================== */
 
 .main-nav {
 
@@ -242,6 +313,7 @@ a {
 
   transition:
     color 0.25s ease,
+    background 0.25s ease,
     transform 0.25s ease;
 
 }
@@ -251,14 +323,19 @@ a {
 
   color: var(--gold-dark);
 
+  transform:
+    translateY(-1px);
+
 }
 
 
 .nav-cta {
 
-  padding: 11px 18px;
+  padding:
+    11px 18px;
 
-  border: 1px solid var(--navy);
+  border:
+    1px solid var(--navy);
 
 }
 
@@ -273,9 +350,9 @@ a {
 
 
 
-/* ========================================
+/* ==============================================
    HERO
-======================================== */
+============================================== */
 
 .hero {
 
@@ -290,9 +367,9 @@ a {
   background:
 
     radial-gradient(
-      circle at 78% 38%,
-      rgba(202, 164, 77, 0.12),
-      transparent 24%
+      circle at 77% 40%,
+      rgba(202, 164, 77, 0.13),
+      transparent 27%
     ),
 
     var(--cream);
@@ -307,18 +384,20 @@ a {
   grid-template-columns:
     1.3fr 0.7fr;
 
-  gap: 70px;
-
   align-items: center;
 
-  padding: 100px 0;
+  gap: 90px;
+
+  padding:
+    105px 0;
 
 }
 
 
 .eyebrow {
 
-  margin: 0 0 22px;
+  margin:
+    0 0 22px;
 
   color: #718078;
 
@@ -340,19 +419,6 @@ a {
 }
 
 
-h1,
-h2,
-h3 {
-
-  font-family: var(--serif);
-
-  line-height: 1.2;
-
-  margin-top: 0;
-
-}
-
-
 h1 {
 
   max-width: 780px;
@@ -360,9 +426,14 @@ h1 {
   margin-bottom: 28px;
 
   font-size:
-    clamp(3.1rem, 7vw, 6.2rem);
+    clamp(
+      3.1rem,
+      7vw,
+      6.2rem
+    );
 
-  letter-spacing: -0.045em;
+  letter-spacing:
+    -0.045em;
 
 }
 
@@ -384,9 +455,9 @@ h1 {
 
   display: flex;
 
-  gap: 14px;
-
   flex-wrap: wrap;
+
+  gap: 14px;
 
   margin-top: 38px;
 
@@ -394,11 +465,13 @@ h1 {
 
 
 
-/* ========================================
+/* ==============================================
    BUTTONS
-======================================== */
+============================================== */
 
 .button {
+
+  min-height: 50px;
 
   display: inline-flex;
 
@@ -406,21 +479,20 @@ h1 {
 
   justify-content: center;
 
-  min-height: 50px;
-
-  padding: 0 24px;
+  padding:
+    0 24px;
 
   border: none;
-
-  cursor: pointer;
-
-  text-decoration: none;
 
   font-family: var(--sans);
 
   font-size: 0.9rem;
 
   font-weight: 600;
+
+  text-decoration: none;
+
+  cursor: pointer;
 
   transition:
     transform 0.25s ease,
@@ -433,7 +505,8 @@ h1 {
 
 .button:hover {
 
-  transform: translateY(-3px);
+  transform:
+    translateY(-3px);
 
 }
 
@@ -452,19 +525,20 @@ h1 {
   background: var(--navy);
 
   box-shadow:
-    0 12px 24px
-    rgba(16, 32, 56, 0.15);
+    0 12px 28px
+    rgba(16, 32, 56, 0.16);
 
 }
 
 
 .button-secondary {
 
-  border: 1px solid var(--navy);
-
-  color: var(--navy);
+  border:
+    1px solid var(--navy);
 
   background: transparent;
+
+  color: var(--navy);
 
 }
 
@@ -479,81 +553,86 @@ h1 {
 
 
 
-/* ========================================
-   HERO DIAMOND
-======================================== */
+/* ==============================================
+   CORRECT ARTHAYA LOGO
+============================================== */
 
-.hero-visual {
+.arthaya-logo {
 
-  display: grid;
+  position: relative;
 
-  justify-items: center;
-
-  gap: 30px;
+  flex-shrink: 0;
 
 }
 
 
-.hero-visual p {
+.logo-piece {
 
-  margin: 0;
+  position: absolute;
 
-  font-family: var(--serif);
+  width: 50%;
 
-  font-size: 1.15rem;
-
-  text-align: center;
-
-  color: var(--navy);
-
-}
-
-
-.hero-emblem {
-
-  width: 250px;
-
-  height: 250px;
-
-  display: grid;
-
-  grid-template-columns:
-    1fr 1fr;
+  height: 50%;
 
   transform: rotate(45deg);
 
-  box-shadow:
-    0 24px 60px
-    rgba(16, 32, 56, 0.14);
-
-  animation:
-    floatDiamond
-    6s
-    ease-in-out
-    infinite;
-
 }
 
 
-.emblem-piece {
+/*
+   Gold top
+*/
 
-  width: 125px;
+.logo-top {
 
-  height: 125px;
+  top: 0;
 
-}
-
-
-.emblem-gold,
-.emblem-gold-2 {
+  left: 25%;
 
   background: var(--gold);
 
 }
 
 
-.emblem-cream,
-.emblem-cream-2 {
+/*
+   Light right
+*/
+
+.logo-right {
+
+  top: 25%;
+
+  right: 0;
+
+  background: var(--cream-light);
+
+}
+
+
+/*
+   Gold bottom
+*/
+
+.logo-bottom {
+
+  bottom: 0;
+
+  left: 25%;
+
+  background: var(--gold);
+
+}
+
+
+/*
+   Light left
+*/
+
+.logo-left {
+
+  top: 25%;
+
+  left: 0;
 
   background: var(--cream-light);
 
@@ -561,26 +640,79 @@ h1 {
 
 
 
-/* ========================================
-   FLOATING HERO LOGO
-======================================== */
+/* ==============================================
+   HERO LOGO
+============================================== */
 
-@keyframes floatDiamond {
+.hero-visual {
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+}
+
+
+.hero-logo {
+
+  width: 250px;
+
+  height: 250px;
+
+  animation:
+    logoFloat
+    5.5s
+    ease-in-out
+    infinite;
+
+  filter:
+    drop-shadow(
+      0 22px 24px
+      rgba(16, 32, 56, 0.11)
+    );
+
+}
+
+
+/*
+   LARGE GAP REQUESTED
+*/
+
+.hero-logo-text {
+
+  margin:
+    78px 0 0;
+
+  color: var(--navy);
+
+  font-family: var(--serif);
+
+  font-size: 1.18rem;
+
+  line-height: 1.55;
+
+  text-align: center;
+
+}
+
+
+@keyframes logoFloat {
 
   0%,
   100% {
 
     transform:
-      rotate(45deg)
       translateY(0);
 
   }
 
-
   50% {
 
     transform:
-      rotate(45deg)
       translateY(-10px);
 
   }
@@ -589,25 +721,27 @@ h1 {
 
 
 
-/* ========================================
+/* ==============================================
    GENERAL SECTIONS
-======================================== */
+============================================== */
 
 .section {
 
-  padding: 120px 0;
+  padding:
+    120px 0;
 
 }
 
 
 
-/* ========================================
+/* ==============================================
    ABOUT
-======================================== */
+============================================== */
 
 .about {
 
-  background: var(--cream-light);
+  background:
+    var(--cream-light);
 
 }
 
@@ -620,9 +754,9 @@ h1 {
   grid-template-columns:
     1.15fr 0.85fr;
 
-  gap: 70px;
-
   align-items: end;
+
+  gap: 70px;
 
   margin-bottom: 60px;
 
@@ -636,9 +770,14 @@ h1 {
   margin-bottom: 0;
 
   font-size:
-    clamp(2.3rem, 4.4vw, 4rem);
+    clamp(
+      2.3rem,
+      4.4vw,
+      4rem
+    );
 
-  letter-spacing: -0.035em;
+  letter-spacing:
+    -0.035em;
 
 }
 
@@ -655,9 +794,9 @@ h1 {
 
 
 
-/* ========================================
+/* ==============================================
    COMMITMENTS
-======================================== */
+============================================== */
 
 .commitment-grid {
 
@@ -673,14 +812,15 @@ h1 {
 
 .commitment-card {
 
-  padding: 30px;
+  min-height: 220px;
 
-  background: #fffdfa;
+  padding: 30px;
 
   border:
     1px solid var(--border);
 
-  min-height: 220px;
+  background:
+    #fffdfa;
 
 }
 
@@ -689,7 +829,8 @@ h1 {
 .contact-label,
 .contact-meta span {
 
-  color: var(--gold-dark);
+  color:
+    var(--gold-dark);
 
   font-size: 0.67rem;
 
@@ -702,7 +843,8 @@ h1 {
 
 .commitment-card h3 {
 
-  margin: 13px 0 10px;
+  margin:
+    13px 0 10px;
 
   font-size: 1.3rem;
 
@@ -719,49 +861,20 @@ h1 {
 
 
 
-/* ========================================
-   CARD ANIMATIONS
-======================================== */
-
-.commitment-card,
-.service-card {
-
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease,
-    border-color 0.3s ease;
-
-}
-
-
-.commitment-card:hover,
-.service-card:hover {
-
-  transform:
-    translateY(-7px);
-
-  box-shadow:
-    0 18px 40px
-    rgba(16, 32, 56, 0.10);
-
-  border-color:
-    rgba(202, 164, 77, 0.45);
-
-}
-
-
-
-/* ========================================
+/* ==============================================
    PHILOSOPHY
-======================================== */
+============================================== */
 
 .philosophy {
 
-  padding: 125px 0;
+  padding:
+    130px 0;
 
-  background: var(--navy);
+  background:
+    var(--navy);
 
-  color: var(--cream-light);
+  color:
+    var(--cream-light);
 
 }
 
@@ -773,9 +886,9 @@ h1 {
   grid-template-columns:
     0.7fr 1.3fr;
 
-  gap: 80px;
-
   align-items: center;
+
+  gap: 90px;
 
 }
 
@@ -784,41 +897,20 @@ h1 {
 
   display: flex;
 
+  align-items: center;
+
   justify-content: center;
 
-}
-
-
-.large-diamond {
-
-  width: 160px;
-
-  height: 160px;
-
-  transform: rotate(45deg);
-
-  background:
-    linear-gradient(
-      90deg,
-      var(--gold) 50%,
-      var(--cream-light) 50%
-    );
-
-  position: relative;
+  min-height: 260px;
 
 }
 
 
-.large-diamond::after {
+.philosophy-logo {
 
-  content: "";
+  width: 190px;
 
-  position: absolute;
-
-  inset:
-    50% 0 0 50%;
-
-  background: var(--gold);
+  height: 190px;
 
 }
 
@@ -827,12 +919,16 @@ h1 {
 
   max-width: 820px;
 
-  margin-bottom: 24px;
+  margin-bottom: 28px;
 
   color: var(--gold);
 
   font-size:
-    clamp(2.1rem, 4.2vw, 3.7rem);
+    clamp(
+      2.1rem,
+      4.2vw,
+      3.7rem
+    );
 
 }
 
@@ -842,7 +938,12 @@ h1 {
   max-width: 760px;
 
   color:
-    rgba(250, 248, 241, 0.76);
+    rgba(
+      250,
+      248,
+      241,
+      0.76
+    );
 
   font-size: 1.03rem;
 
@@ -850,9 +951,9 @@ h1 {
 
 
 
-/* ========================================
+/* ==============================================
    SERVICES
-======================================== */
+============================================== */
 
 .services {
 
@@ -877,14 +978,15 @@ h1 {
 
   position: relative;
 
-  padding: 42px;
+  overflow: hidden;
 
-  background: var(--cream-light);
+  padding: 42px;
 
   border:
     1px solid var(--border);
 
-  overflow: hidden;
+  background:
+    var(--cream-light);
 
 }
 
@@ -893,25 +995,27 @@ h1 {
 
   position: absolute;
 
+  top: 22px;
+
   right: 28px;
 
-  top: 22px;
+  color:
+    rgba(202, 164, 77, 0.18);
 
   font-family: var(--serif);
 
   font-size: 3.5rem;
-
-  color:
-    rgba(202, 164, 77, 0.18);
 
 }
 
 
 .service-category {
 
-  margin: 0 0 10px;
+  margin:
+    0 0 10px;
 
-  color: var(--gold-dark);
+  color:
+    var(--gold-dark);
 
   font-size: 0.73rem;
 
@@ -944,7 +1048,8 @@ h1 {
 
 .service-card ul {
 
-  margin: 26px 0 0;
+  margin:
+    26px 0 0;
 
   padding: 0;
 
@@ -955,11 +1060,11 @@ h1 {
 
 .service-card li {
 
+  position: relative;
+
   padding:
     11px 0
     11px 24px;
-
-  position: relative;
 
   border-top:
     1px solid
@@ -984,13 +1089,46 @@ h1 {
 
 
 
-/* ========================================
+/* ==============================================
+   CARD HOVER
+============================================== */
+
+.commitment-card,
+.service-card {
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+
+}
+
+
+.commitment-card:hover,
+.service-card:hover {
+
+  transform:
+    translateY(-7px);
+
+  border-color:
+    rgba(202, 164, 77, 0.48);
+
+  box-shadow:
+    0 20px 42px
+    rgba(16, 32, 56, 0.10);
+
+}
+
+
+
+/* ==============================================
    CONTACT
-======================================== */
+============================================== */
 
 .contact {
 
-  background: var(--cream-light);
+  background:
+    var(--cream-light);
 
 }
 
@@ -1002,6 +1140,8 @@ h1 {
   grid-template-columns:
     1.1fr 0.9fr;
 
+  align-items: center;
+
   gap: 60px;
 
   padding: 48px;
@@ -1009,9 +1149,8 @@ h1 {
   border:
     1px solid var(--border);
 
-  background: #fffdfa;
-
-  align-items: center;
+  background:
+    #fffdfa;
 
 }
 
@@ -1021,18 +1160,22 @@ h1 {
   margin-bottom: 14px;
 
   font-size:
-    clamp(2rem, 4vw, 3.3rem);
+    clamp(
+      2rem,
+      4vw,
+      3.3rem
+    );
 
 }
 
 
 .contact-panel p {
 
+  max-width: 580px;
+
   margin: 0;
 
   color: var(--muted);
-
-  max-width: 580px;
 
 }
 
@@ -1055,7 +1198,11 @@ h1 {
   font-family: var(--serif);
 
   font-size:
-    clamp(1.35rem, 2.5vw, 2rem);
+    clamp(
+      1.35rem,
+      2.5vw,
+      2rem
+    );
 
   text-decoration: none;
 
@@ -1073,9 +1220,9 @@ h1 {
 
 
 
-/* ========================================
-   CONTACT DETAILS
-======================================== */
+/* ==============================================
+   CONTACT META
+============================================== */
 
 .contact-meta {
 
@@ -1116,38 +1263,42 @@ h1 {
 
 .contact-meta p {
 
-  margin: 2px 0 0;
+  margin:
+    2px 0 0;
 
-  color: var(--muted);
+  color:
+    var(--muted);
 
-  font-size: 0.85rem;
+  font-size:
+    0.85rem;
 
 }
 
 
 
-/* ========================================
-   ASK ARTHAYA FORM
-======================================== */
+/* ==============================================
+   ASK ARTHAYA
+============================================== */
 
 .question-box {
-
-  margin-top: 70px;
-
-  padding: 50px;
 
   display: grid;
 
   grid-template-columns:
     0.8fr 1.2fr;
 
+  align-items: start;
+
   gap: 60px;
 
-  align-items: start;
+  margin-top: 80px;
+
+  padding: 52px;
 
   background: var(--navy);
 
-  color: var(--cream-light);
+  color:
+    var(--cream-light);
 
 }
 
@@ -1157,7 +1308,11 @@ h1 {
   margin-bottom: 18px;
 
   font-size:
-    clamp(2rem, 4vw, 3.2rem);
+    clamp(
+      2rem,
+      4vw,
+      3.2rem
+    );
 
 }
 
@@ -1165,7 +1320,12 @@ h1 {
 .question-copy p:last-child {
 
   color:
-    rgba(250, 248, 241, 0.7);
+    rgba(
+      250,
+      248,
+      241,
+      0.7
+    );
 
 }
 
@@ -1206,13 +1366,15 @@ h1 {
 
 .form-field label {
 
+  color: var(--gold);
+
   font-size: 0.72rem;
+
+  font-weight: 600;
 
   letter-spacing: 0.12em;
 
   text-transform: uppercase;
-
-  color: var(--gold);
 
 }
 
@@ -1222,24 +1384,35 @@ h1 {
 
   width: 100%;
 
-  padding: 15px 16px;
+  padding:
+    15px 16px;
 
   border:
     1px solid
-    rgba(255, 255, 255, 0.22);
+    rgba(
+      255,
+      255,
+      255,
+      0.22
+    );
+
+  border-radius: 0;
+
+  outline: none;
 
   background:
-    rgba(255, 255, 255, 0.06);
+    rgba(
+      255,
+      255,
+      255,
+      0.06
+    );
 
-  color: var(--white);
+  color: white;
 
   font-family: var(--sans);
 
   font-size: 0.95rem;
-
-  outline: none;
-
-  border-radius: 0;
 
   transition:
     border-color 0.25s ease,
@@ -1251,9 +1424,9 @@ h1 {
 
 .form-field textarea {
 
-  resize: vertical;
-
   min-height: 135px;
+
+  resize: vertical;
 
 }
 
@@ -1262,7 +1435,12 @@ h1 {
 .form-field textarea::placeholder {
 
   color:
-    rgba(255, 255, 255, 0.45);
+    rgba(
+      255,
+      255,
+      255,
+      0.45
+    );
 
 }
 
@@ -1270,118 +1448,128 @@ h1 {
 .form-field input:focus,
 .form-field textarea:focus {
 
-  border-color: var(--gold);
+  border-color:
+    var(--gold);
 
   background:
-    rgba(255, 255, 255, 0.1);
+    rgba(
+      255,
+      255,
+      255,
+      0.10
+    );
 
   box-shadow:
     0 0 0 2px
-    rgba(202, 164, 77, 0.12);
+    rgba(
+      202,
+      164,
+      77,
+      0.13
+    );
 
 }
 
 
 
-/* ========================================
-   SCROLL ANIMATIONS
-======================================== */
+/* ==============================================
+   REPEATING SCROLL ANIMATIONS
+============================================== */
 
-.reveal {
+[data-reveal] {
 
   opacity: 0;
 
-  transform:
-    translateY(32px);
-
   transition:
-    opacity 0.8s ease,
-    transform 0.8s ease;
+
+    opacity
+    0.75s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    ),
+
+    transform
+    0.75s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    );
+
+  transition-delay:
+    var(
+      --reveal-delay,
+      0ms
+    );
+
+  will-change:
+    opacity,
+    transform;
 
 }
 
 
-.reveal.active {
+/* UP */
+
+[data-reveal="up"] {
+
+  transform:
+    translateY(45px);
+
+}
+
+
+/* LEFT */
+
+[data-reveal="left"] {
+
+  transform:
+    translateX(-45px);
+
+}
+
+
+/* RIGHT */
+
+[data-reveal="right"] {
+
+  transform:
+    translateX(45px);
+
+}
+
+
+/* ACTIVE */
+
+[data-reveal].is-visible {
 
   opacity: 1;
 
   transform:
-    translateY(0);
+    translate(0, 0);
 
 }
 
 
 
-/* Hero entrance */
-
-.hero-copy.reveal {
-
-  transform:
-    translateY(30px);
-
-}
-
-
-.hero-copy.reveal.active {
-
-  transform:
-    translateY(0);
-
-}
-
-
-
-/* Hero graphic */
-
-.hero-visual.reveal {
-
-  transform:
-    translateY(25px)
-    scale(0.96);
-
-}
-
-
-.hero-visual.reveal.active {
-
-  transform:
-    translateY(0)
-    scale(1);
-
-}
-
-
-
-/* Philosophy logo */
-
-.philosophy-mark.reveal {
-
-  transform:
-    translateX(-25px);
-
-}
-
-
-.philosophy-mark.reveal.active {
-
-  transform:
-    translateX(0);
-
-}
-
-
-
-/* ========================================
+/* ==============================================
    FOOTER
-======================================== */
+============================================== */
 
 .site-footer {
 
-  padding: 28px 0;
+  padding:
+    30px 0;
 
-  background: var(--navy);
+  background:
+    var(--navy);
 
-  color: var(--cream-light);
+  color:
+    var(--cream-light);
 
 }
 
@@ -1390,15 +1578,18 @@ h1 {
 
   display: flex;
 
-  justify-content: space-between;
-
   align-items: center;
+
+  justify-content:
+    space-between;
 
   gap: 20px;
 
-  font-family: var(--serif);
+  font-family:
+    var(--serif);
 
-  font-size: 0.9rem;
+  font-size:
+    0.9rem;
 
 }
 
@@ -1409,7 +1600,7 @@ h1 {
 
   align-items: center;
 
-  gap: 12px;
+  gap: 13px;
 
 }
 
@@ -1430,27 +1621,24 @@ h1 {
 }
 
 
-.mini-diamond {
+.footer-diamond {
 
-  width: 11px;
+  width: 12px;
 
-  height: 11px;
+  height: 12px;
 
   background: var(--gold);
 
-  transform: rotate(45deg);
-
-  box-shadow:
-    6px 6px 0
-    var(--cream-light);
+  transform:
+    rotate(45deg);
 
 }
 
 
 
-/* ========================================
+/* ==============================================
    TABLET
-======================================== */
+============================================== */
 
 @media
 (max-width: 900px) {
@@ -1491,14 +1679,15 @@ h1 {
 
   .hero-grid {
 
-    padding: 80px 0;
+    padding:
+      80px 0;
 
   }
 
 
   .hero-visual {
 
-    margin-top: 20px;
+    margin-top: 40px;
 
   }
 
@@ -1513,16 +1702,16 @@ h1 {
 
   .philosophy-mark {
 
-    justify-content: flex-start;
+    justify-content: center;
 
   }
 
 
+  .two-col-heading,
+  .services-heading,
   .philosophy-grid,
   .contact-panel,
-  .question-box,
-  .two-col-heading,
-  .services-heading {
+  .question-box {
 
     gap: 36px;
 
@@ -1532,9 +1721,9 @@ h1 {
 
 
 
-/* ========================================
+/* ==============================================
    MOBILE
-======================================== */
+============================================== */
 
 @media
 (max-width: 600px) {
@@ -1560,14 +1749,15 @@ h1 {
 
   .brand-name {
 
-    font-size: 0.96rem;
+    font-size: 0.95rem;
 
   }
 
 
   .nav-cta {
 
-    padding: 9px 12px;
+    padding:
+      9px 12px;
 
     font-size:
       0.8rem !important;
@@ -1579,7 +1769,7 @@ h1 {
 
     font-size:
       clamp(
-        2.75rem,
+        2.7rem,
         14vw,
         4.2rem
       );
@@ -1589,29 +1779,35 @@ h1 {
 
   .hero-grid {
 
+    gap: 55px;
+
     padding:
-      70px 0
-      75px;
-
-    gap: 44px;
+      72px 0 82px;
 
   }
 
 
-  .hero-emblem {
+  .hero-logo {
 
-    width: 180px;
+    width: 175px;
 
-    height: 180px;
+    height: 175px;
 
   }
 
 
-  .emblem-piece {
+  .hero-logo-text {
 
-    width: 90px;
+    margin-top: 55px;
 
-    height: 90px;
+  }
+
+
+  .philosophy-logo {
+
+    width: 135px;
+
+    height: 135px;
 
   }
 
@@ -1630,7 +1826,7 @@ h1 {
   .contact-panel,
   .question-box {
 
-    padding: 26px;
+    padding: 27px;
 
   }
 
@@ -1664,13 +1860,35 @@ h1 {
 
   }
 
+
+  /*
+    Mobile animations come from below
+    rather than side-to-side.
+  */
+
+  [data-reveal="left"],
+  [data-reveal="right"] {
+
+    transform:
+      translateY(35px);
+
+  }
+
+
+  [data-reveal].is-visible {
+
+    transform:
+      translateY(0);
+
+  }
+
 }
 
 
 
-/* ========================================
-   REDUCED MOTION ACCESSIBILITY
-======================================== */
+/* ==============================================
+   ACCESSIBILITY
+============================================== */
 
 @media
 (prefers-reduced-motion: reduce) {
@@ -1699,7 +1917,7 @@ h1 {
   }
 
 
-  .reveal {
+  [data-reveal] {
 
     opacity: 1;
 
