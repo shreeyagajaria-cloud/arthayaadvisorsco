@@ -636,3 +636,189 @@ h1 {
     align-items: flex-start;
   }
 }
+/* ========================================
+   QUESTION FORM
+======================================== */
+
+.question-box {
+  margin-top: 70px;
+  padding: 50px;
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 60px;
+  align-items: start;
+
+  background: var(--navy);
+  color: var(--cream-light);
+}
+
+.question-copy h2 {
+  margin-bottom: 18px;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+}
+
+.question-copy p:last-child {
+  color: rgba(250, 248, 241, 0.7);
+}
+
+.question-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-field label {
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.form-field input,
+.form-field textarea {
+  width: 100%;
+  padding: 15px 16px;
+
+  border: 1px solid rgba(255,255,255,0.22);
+  background: rgba(255,255,255,0.06);
+
+  color: white;
+
+  font-family: var(--sans);
+  font-size: 0.95rem;
+
+  outline: none;
+
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease;
+}
+
+.form-field textarea {
+  resize: vertical;
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: rgba(255,255,255,0.45);
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+  border-color: var(--gold);
+  background: rgba(255,255,255,0.1);
+}
+
+
+/* ========================================
+   HOVER ANIMATIONS
+======================================== */
+
+.commitment-card,
+.service-card {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.commitment-card:hover,
+.service-card:hover {
+  transform: translateY(-7px);
+
+  box-shadow:
+    0 18px 40px rgba(16, 32, 56, 0.10);
+
+  border-color: rgba(202, 164, 77, 0.45);
+}
+
+
+.button {
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+.button:hover {
+  transform: translateY(-3px);
+}
+
+
+/* ========================================
+   LOGO ANIMATION
+======================================== */
+
+.hero-emblem {
+  animation: floatDiamond 6s ease-in-out infinite;
+}
+
+@keyframes floatDiamond {
+
+  0%,
+  100% {
+    transform: rotate(45deg) translateY(0);
+  }
+
+  50% {
+    transform: rotate(45deg) translateY(-12px);
+  }
+
+}
+
+
+/* ========================================
+   SCROLL REVEAL
+======================================== */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(35px);
+
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 900px) {
+
+  .question-box {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .question-box {
+    padding: 28px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+}
